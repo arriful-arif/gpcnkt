@@ -1,6 +1,24 @@
 {
   "products": [
     {
+      "title": "Realme C100x",
+      "brand": "REALME",
+      "image": "/images/products/realme-c100x-golden-coast-official-image.webp",
+      "price": "21,999",
+      "variants": [
+        {
+          "ram": "4",
+          "rom": "128",
+          "price": "21999"
+        },
+        {
+          "ram": "6",
+          "rom": "128",
+          "price": "23,999"
+        }
+      ]
+    },
+    {
       "brand": "VILLAON",
       "title": "Villaon V50s",
       "specs": "Official | Budget Friendly",
