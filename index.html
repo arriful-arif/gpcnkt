@@ -147,7 +147,7 @@ footer p{margin-bottom:8px}
 const whatsappNumber="8801781712020";
 let selectedBrand="all";
 
-const products=let products=[];
+let products = [];
 function getNumericPrice(p){
 const bn="০১২৩৪৫৬৭৮৯";
 const raw=String(p.price||"").replace(/[০-৯]/g,ch=>bn.indexOf(ch)).replace(/[^0-9]/g,"");
