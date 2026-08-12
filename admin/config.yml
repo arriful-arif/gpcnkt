@@ -1,0 +1,84 @@
+backend:
+  name: github
+  repo: arriful-arif/gpcnkt
+  branch: main
+
+media_folder: "images/products"
+public_folder: "/images/products"
+
+locale: "bn"
+
+collections:
+  - name: "catalog"
+    label: "📱 Product Catalog"
+    files:
+      - name: "products"
+        label: "All Products"
+        file: "products.json"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            add_to_top: true
+            collapsed: true
+            summary: "{{fields.title}} — {{fields.price}}"
+            fields:
+              - label: "Product Name"
+                name: "title"
+                widget: "string"
+              - label: "Brand"
+                name: "brand"
+                widget: "select"
+                options:
+                  - "SAMSUNG"
+                  - "XIAOMI"
+                  - "VIVO"
+                  - "REALME"
+                  - "OPPO"
+                  - "HONOR"
+                  - "TECNO"
+                  - "INFINIX"
+                  - "WALTON"
+                  - "VILLAON"
+              - label: "Product Image"
+                name: "image"
+                widget: "image"
+                media_folder: "/images/products"
+                public_folder: "/images/products"
+                choose_url: true
+              - label: "Short Details / Specs"
+                name: "specs"
+                widget: "string"
+              - label: "Main Price"
+                name: "price"
+                widget: "string"
+                hint: "যেমন: ৳ ৫৩,৯৯৯ অথবা ৳ ৩১,৯৯৯ - ৳ ৪০,১৯৯"
+              - label: "Old Price"
+                name: "oldPrice"
+                widget: "string"
+                required: false
+              - label: "Discount Badge"
+                name: "discount"
+                widget: "string"
+                required: false
+                hint: "যেমন: ৳ ৫,০০০ ছাড় — না থাকলে খালি রাখুন"
+              - label: "RAM / ROM Variants"
+                name: "variants"
+                widget: "list"
+                required: false
+                collapsed: true
+                summary: "{{fields.ram}} / {{fields.rom}} — {{fields.price}}"
+                fields:
+                  - label: "RAM"
+                    name: "ram"
+                    widget: "string"
+                  - label: "ROM / Storage"
+                    name: "rom"
+                    widget: "string"
+                  - label: "Variant Price"
+                    name: "price"
+                    widget: "string"
+                  - label: "Variant Old Price"
+                    name: "oldPrice"
+                    widget: "string"
+                    required: false

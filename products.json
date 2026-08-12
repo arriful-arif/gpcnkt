@@ -1,0 +1,217 @@
+{
+  "products": [
+    {
+      "brand": "VILLAON",
+      "title": "Villaon V50s",
+      "specs": "Official | Budget Friendly",
+      "price": "৳ ১০,২৯০",
+      "image": "V50s-1.jpg"
+    },
+    {
+      "brand": "WALTON",
+      "title": "Walton ZENX Z3",
+      "specs": "Official | Smooth Performance",
+      "price": "৳ ১৪,৭৯৯",
+      "image": "Z3-BLK.webp"
+    },
+    {
+      "brand": "REALME",
+      "title": "Realme C100i",
+      "specs": "Official | EMI Available",
+      "price": "৳ ১৫,৯৯৯",
+      "image": "C100i-1.webp"
+    },
+    {
+      "brand": "VIVO",
+      "title": "Vivo Y05e",
+      "specs": "Official | Long Life Battery",
+      "price": "৳ ১৬,৫৯৯",
+      "image": "vivo-y05e-black.jpeg"
+    },
+    {
+      "brand": "SAMSUNG",
+      "title": "Galaxy A07",
+      "specs": "Official | 6-9 মাস কিস্তি সুবিধা",
+      "price": "৳ ১৬,৯৯৯ - ৳ ২৪,৪৯৯",
+      "variants": [
+        {
+          "ram": "4GB",
+          "rom": "64GB",
+          "price": "৳ ১৬,৯৯৯",
+          "oldPrice": "৳ ১৭,১৯৯"
+        },
+        {
+          "ram": "4GB",
+          "rom": "128GB",
+          "price": "৳ ২০,৮৯৯",
+          "oldPrice": ""
+        },
+        {
+          "ram": "6GB",
+          "rom": "128GB",
+          "price": "৳ ২৪,৪৯৯",
+          "oldPrice": ""
+        }
+      ],
+      "image": "sam-a07-wht.webp"
+    },
+    {
+      "brand": "TECNO",
+      "title": "Tecno Spark 50",
+      "specs": "Official | Mega Battery",
+      "price": "৳ ১৭,৪৯৯",
+      "image": "tecno-spark-50-black.jpeg"
+    },
+    {
+      "brand": "WALTON",
+      "title": "Walton Nexg N77",
+      "specs": "Official | Made in Bangladesh",
+      "price": "৳ ১৭,৯৯৯",
+      "image": "walton-n77.jpg"
+    },
+    {
+      "brand": "HONOR",
+      "title": "Honor X6d",
+      "specs": "Official | Ultra Durable",
+      "price": "৳ ১৯,৯৯৯",
+      "image": "honor-x6d.jpg"
+    },
+    {
+      "brand": "REALME",
+      "title": "Realme C100x",
+      "specs": "Official | Fast Charging",
+      "price": "৳ ২১,৯৯৯",
+      "image": "realme-c100x.jpg"
+    },
+    {
+      "brand": "WALTON",
+      "title": "Walton NEXG N28 PRO",
+      "specs": "Official | Gaming Display",
+      "price": "৳ ২২,৪৯৯",
+      "image": "walton-n28pro.jpg"
+    },
+    {
+      "brand": "XIAOMI",
+      "title": "Redmi 17 4G",
+      "specs": "Official | Official Warranty",
+      "price": "৳ ২২,৯৯৯",
+      "image": "redmi-17.jpg"
+    },
+    {
+      "brand": "SAMSUNG",
+      "title": "Galaxy A17",
+      "specs": "Official | Premium Design",
+      "price": "৳ ২৪,৯৯৯",
+      "image": "galaxy-a17.jpg"
+    },
+    {
+      "brand": "SAMSUNG",
+      "title": "Galaxy A17 5G",
+      "specs": "Official | 6-9 মাসের EMI সুবিধা",
+      "price": "৳ ৩১,৯৯৯ - ৳ ৪০,১৯৯",
+      "variants": [
+        {
+          "ram": "6GB",
+          "rom": "128GB",
+          "price": "৳ ৩১,৯৯৯",
+          "oldPrice": ""
+        },
+        {
+          "ram": "8GB",
+          "rom": "128GB",
+          "price": "৳ ৩৫,৫৯৯",
+          "oldPrice": ""
+        },
+        {
+          "ram": "8GB",
+          "rom": "256GB",
+          "price": "৳ ৪০,১৯৯",
+          "oldPrice": ""
+        }
+      ],
+      "image": "galaxy-a17-5g.jpg"
+    },
+    {
+      "brand": "INFINIX",
+      "title": "Infinix Hot 70 Pro",
+      "specs": "Official | 0% EMI Available",
+      "price": "৳ ৩৬,৯৯৯",
+      "image": "infinix-hot70pro.jpg"
+    },
+    {
+      "brand": "VIVO",
+      "title": "Vivo Y500",
+      "specs": "Official | 0% EMI Available",
+      "price": "৳ ৩৬,৯৯৯",
+      "image": "vivo-y500.jpg"
+    },
+    {
+      "brand": "OPPO",
+      "title": "Oppo A6s Pro",
+      "specs": "Official | Portrait Camera",
+      "price": "৳ ৩৯,৯৯০",
+      "image": "oppo-a6spro.jpg"
+    },
+    {
+      "brand": "SAMSUNG",
+      "title": "Galaxy A27 5G",
+      "specs": "Official | Multiple Variants",
+      "price": "৳ ৪৮,০৯৯ - ৳ ৫২,২৯৯",
+      "variants": [
+        {
+          "ram": "6GB",
+          "rom": "128GB",
+          "price": "৳ ৪৮,০৯৯",
+          "oldPrice": ""
+        },
+        {
+          "ram": "8GB",
+          "rom": "128GB",
+          "price": "৳ ৫২,২৯৯",
+          "oldPrice": ""
+        }
+      ],
+      "image": "galaxy-a27-5g.jpg"
+    },
+    {
+      "brand": "SAMSUNG",
+      "title": "Galaxy A37 5G",
+      "specs": "Official | Special Discount Offer",
+      "price": "৳ ৫৩,৯৯৯ - ৳ ৫৭,৯৯৯",
+      "discount": "বিশেষ ছাড়",
+      "variants": [
+        {
+          "ram": "8GB",
+          "rom": "128GB",
+          "price": "৳ ৫৩,৯৯৯",
+          "oldPrice": "৳ ৬০,৪৯৯"
+        },
+        {
+          "ram": "8GB",
+          "rom": "256GB",
+          "price": "৳ ৫৭,৯৯৯",
+          "oldPrice": "৳ ৬৮,৯৯৯"
+        }
+      ],
+      "image": "galaxy-a37-5g.jpg"
+    },
+    {
+      "brand": "SAMSUNG",
+      "title": "Galaxy A57 5G",
+      "specs": "Official | Special Discount Offer",
+      "price": "৳ ৭১,৯৯৯",
+      "oldPrice": "৳ ৭৯,৯৯৯",
+      "discount": "৳ ৮,০০০ ছাড়",
+      "image": "galaxy-a57.jpg"
+    },
+    {
+      "brand": "XIAOMI",
+      "title": "Xiaomi 17T 5G",
+      "specs": "Official | Special Discount Offer",
+      "price": "৳ ৭৪,৯৯৯",
+      "oldPrice": "৳ ৭৯,৯৯৯",
+      "discount": "৳ ৫,০০০ ছাড়",
+      "image": "xiaomi-17t.jpg"
+    }
+  ]
+}
