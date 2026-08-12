@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smartphone Gallery & Brand Shop | Grameenphone Center</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+:root{--bg:#0b132b;--card-bg:#1c2541;--accent:#ff6b35;--gp-blue:#00a8ea;--text:#fff;--text-muted:#a0aec0;--green:#25d366;--blue:#1877f2;--discount-red:#ff4757}
+body{background:var(--bg);color:var(--text);padding-bottom:50px}
+header{background:var(--card-bg);padding:20px 15px;text-align:center;border-bottom:3px solid #19AAF8}
+header h1{font-size:1.6rem;color:#fff;margin-bottom:5px}
+header h2.gp-center{font-size:1.2rem;color:var(--gp-blue);font-weight:700;margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase}
+header p{color:var(--text-muted);font-size:.85rem}
+.ticker-wrap{width:100%;background:#19AAF8;color:#fff;overflow:hidden;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.3);padding:10px 0;font-weight:600;font-size:.95rem}
+.ticker{display:inline-block;white-space:nowrap;padding-left:100%;animation:marquee 25s linear infinite}
+.ticker:hover{animation-play-state:paused}.ticker-item{display:inline-block;padding:0 20px}
+@keyframes marquee{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-100%,0,0)}}
+.container{max-width:1000px;margin:0 auto;padding:0 15px}
+.hero-banner{margin:20px 0 10px;border-radius:12px;overflow:hidden;background:var(--card-bg);border:1px solid rgba(255,255,255,.08);position:relative}
+.slider-wrapper{display:flex;transition:transform .6s ease-in-out;width:100%}
+.slide{min-width:100%}.slide img{width:100%;height:auto;display:block}
+.slider-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.dot{width:10px;height:10px;background:rgba(255,255,255,.5);border-radius:50%;cursor:pointer;transition:.3s}
+.dot.active{background:var(--accent);width:24px;border-radius:12px}
+.search-box{margin:25px auto 20px;max-width:650px;position:relative}
+.search-box input{width:100%;padding:13px 18px;border-radius:25px;border:1px solid rgba(255,255,255,.12);outline:none;background:var(--card-bg);color:#fff;font-size:.95rem;transition:.3s}
+.search-box input::placeholder{color:var(--text-muted)}
+.search-box input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,107,53,.12)}
+.search-result{font-size:.82rem;color:var(--text-muted);text-align:center;margin:-10px 0 20px;min-height:18px}
+.section-title{font-size:1.3rem;margin:30px 0 15px;text-align:center;color:var(--accent);position:relative}
+.section-title:after{content:'';display:block;width:50px;height:3px;background:var(--accent);margin:8px auto 0;border-radius:2px}
+.custom-box{background:var(--card-bg);padding:25px 20px;border-radius:12px;margin:25px 0;border-left:4px solid var(--accent)}
+.custom-box.gadget-box{border-left-color:var(--gp-blue)}
+.custom-box h3{font-size:1.3rem;margin-bottom:10px}.custom-box p{font-size:.9rem;color:var(--text-muted);line-height:1.6;margin-bottom:15px}
+.gadget-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.gadget-tag{background:rgba(0,168,234,.15);color:#e0f4ff;border:1px solid rgba(0,168,234,.3);padding:5px 12px;border-radius:15px;font-size:.82rem;font-weight:500}
+.brand-container{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:25px}
+.brand-btn{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);color:var(--text);padding:8px 14px;border-radius:20px;cursor:pointer;font-weight:bold;font-size:.85rem;transition:.3s}
+.brand-btn:hover,.brand-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--card-bg);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s;border:1px solid rgba(255,255,255,.05);position:relative}
+.card:hover{transform:translateY(-4px)}.card img{width:100%;height:220px;object-fit:contain;background:#fff;padding:10px}
+.card-body{padding:15px;display:flex;flex-direction:column;flex-grow:1}.card-title{font-size:1.1rem;margin-bottom:8px}
+.card-specs{font-size:.85rem;color:var(--text-muted);margin-bottom:12px;line-height:1.4}.price-box{margin-top:auto;margin-bottom:12px}
+.price{font-size:1.25rem;font-weight:bold;color:var(--accent)}.old-price{font-size:.95rem;color:#888;text-decoration:line-through;margin-right:8px}
+.discount-badge{position:absolute;top:10px;right:10px;background:var(--discount-red);color:#fff;font-size:.75rem;font-weight:bold;padding:4px 8px;border-radius:4px;z-index:2}
+.btn{display:inline-block;width:100%;padding:10px;text-align:center;text-decoration:none;font-weight:bold;border-radius:6px;cursor:pointer;border:none}
+.btn-wa{background:var(--green);color:#fff}.btn-wa:hover{opacity:.9}.btn-fb{background:var(--blue);color:#fff;margin-top:10px}
+.empty-state{grid-column:1/-1;text-align:center;padding:35px 15px;background:var(--card-bg);border-radius:10px;color:var(--text-muted)}
+footer{text-align:center;padding:25px 15px;background:var(--card-bg);color:var(--text-muted);font-size:.85rem;margin-top:40px;border-top:1px solid rgba(255,255,255,.05)}
+footer p{margin-bottom:8px}
+.modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.8);backdrop-filter:blur(4px)}
+.modal-content{background-color:var(--card-bg);margin:10% auto;padding:24px;border-radius:12px;max-width:420px;width:90%;border:1px solid rgba(255,255,255,.1);position:relative;box-shadow:0 10px 25px rgba(0,0,0,.5)}
+.close-modal{position:absolute;top:12px;right:16px;font-size:24px;font-weight:bold;color:var(--text-muted);cursor:pointer}
+.close-modal:hover{color:#fff}
+.variant-option{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:12px 15px;border-radius:8px;margin-top:10px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:.2s}
+.variant-option:hover,.variant-option.selected{border-color:var(--accent);background:rgba(255,107,53,.1)}
+.variant-old-price{font-size:.8rem;color:#888;text-decoration:line-through;margin-right:5px}.variant-price{color:var(--accent);font-weight:bold}
+@media(max-width:600px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card img{height:170px}.card-body{padding:12px}.card-title{font-size:.95rem}.card-specs{font-size:.78rem}.price{font-size:1rem}.old-price{font-size:.78rem}.btn{font-size:.78rem;padding:9px 5px}}
+</style>
+</head>
+<body>
+<header>
+<h1>Smartphone Gallery & Brand Shop</h1>
+<h2 class="gp-center">Grameenphone Center</h2>
+<p>বটতলা, লাকসাম সিএনজি স্ট্যান্ড এর সামনে, নাঙ্গলকোট, কুমিল্লা</p>
+</header>
+
+<div class="ticker-wrap"><div class="ticker">
+<div class="ticker-item">🔥 আমাদের শপে পাচ্ছেন সর্বোচ্চ 0% ইন্টারেস্টে EMI সুবিধা! 💳</div>
+<div class="ticker-item">📱 ১০০% অফিশিয়াল ব্র্যান্ডেড স্মার্টফোন এবং লেটেস্ট গ্যাজেট কালেকশন!</div>
+<div class="ticker-item">✨ নিখুঁত সাইজের কাস্টম মোবাইল ফোন স্টিকার সার্ভিস</div>
+<div class="ticker-item">🎁 যেকোনো ফোন কিনে জিতে নিন আকর্ষণীয় ক্যাশব্যাক ও উপহার!</div>
+</div></div>
+
+<div class="container">
+<div class="hero-banner slider-container">
+<div class="slider-wrapper" id="banner-slider">
+<div class="slide"><img src="./index.png" alt="Smartphone Gallery Banner 1"></div>
+<div class="slide"><img src="./index2.png" alt="Smartphone Gallery Banner 2"></div>
+<div class="slide"><img src="./index3.png" alt="Smartphone Gallery Banner 3"></div>
+<div class="slide"><img src="./index4.png" alt="Smartphone Gallery Banner 4"></div>
+</div>
+<div class="slider-dots" id="slider-dots">
+<span class="dot active" onclick="goToSlide(0)"></span><span class="dot" onclick="goToSlide(1)"></span><span class="dot" onclick="goToSlide(2)"></span><span class="dot" onclick="goToSlide(3)"></span>
+</div></div>
+
+<!-- Search Bar under Slide Banner -->
+<div class="search-box">
+<input type="text" id="product-search" placeholder="🔍 ফোনের নাম বা ব্র্যান্ড লিখে সার্চ করুন..." autocomplete="off" oninput="searchProducts()">
+</div>
+<div class="search-result" id="search-result"></div>
+
+<div class="custom-box">
+<h3>✨ কাস্টম ফোন স্টিকার সার্ভিস</h3>
+<p>আমাদের কাছে পাবেন বিভিন্ন প্রকারের আধুনিক ও স্টাইলিশ ফোন স্টিকার! আমরা লেটেস্ট অত্যাধুনিক মেশিনের মাধ্যমে যেকোনো ব্র্যান্ডের মোবাইল ফোনের নিখুঁত সাইজ অনুযায়ী কেটে কেটে স্টিকার বসিয়ে দিই। এছাড়া আপনার <strong>নিজের ছবি বা পছন্দের যেকোনো ডিজাইন</strong> দিয়েও কাস্টম স্টিকার বানিয়ে নেওয়ার সুযোগ রয়েছে!</p>
+<a href="https://wa.me/8801781712020?text=হ্যালো,%20আমি%20কাস্টম%20ফোন%20স্টিকার%20সম্পর্কে%20জানতে%20চাই।" target="_blank" class="btn btn-wa" style="width:auto;padding:10px 20px;">স্টিকার বুকিং বা বিবরণ জানুন</a>
+</div>
+
+<div class="custom-box gadget-box">
+<h3>🎧 আধুনিক গ্যাজেট ও এক্সেসরিজ কালেকশন</h3>
+<p>স্মার্টফোনের পাশাপাশি আমাদের শপে পাবেন সেরা মানের সব ব্র্যান্ডেড গ্যাজেটস ও প্রটেকশন আইটেম।</p>
+<div class="gadget-list">
+<span class="gadget-tag">এয়ার বার্ডস</span><span class="gadget-tag">স্মার্ট ওয়াচ</span><span class="gadget-tag">পাওয়ার ব্যাংক</span><span class="gadget-tag">ব্র্যান্ডেড চার্জার</span><span class="gadget-tag">ব্র্যান্ডেড কেবল</span><span class="gadget-tag">হেডফোন</span><span class="gadget-tag">ব্লুটুথ স্পিকার</span><span class="gadget-tag">সিসি ক্যামেরা</span><span class="gadget-tag">জিপিএস ডিভাইস</span><span class="gadget-tag">গ্যাস ডিটেক্টর</span><span class="gadget-tag">পকেট রাউটার</span><span class="gadget-tag">প্রটেকশন গ্লাস ও কভার</span>
+</div>
+<a href="https://wa.me/8801781712020?text=হ্যালো,%20আমি%20আপনাদের%20গ্যাজেট%20আইটেম%20সম্পর্কে%20জানতে%20চাই।" target="_blank" class="btn btn-wa" style="width:auto;padding:10px 20px;background:var(--gp-blue);">গ্যাজেট প্রাইস ও ডিটেইলস জানুন</a>
+</div>
+
+<h2 class="section-title">অফিশিয়াল স্মার্টফোন ব্র্যান্ড</h2>
+
+<div class="brand-container" id="brand-filters">
+<button class="brand-btn active" onclick="filterBrand('all',this)">সকল ফোন</button>
+<button class="brand-btn" onclick="filterBrand('SAMSUNG',this)">SAMSUNG</button>
+<button class="brand-btn" onclick="filterBrand('XIAOMI',this)">XIAOMI</button>
+<button class="brand-btn" onclick="filterBrand('OPPO',this)">OPPO</button>
+<button class="brand-btn" onclick="filterBrand('VIVO',this)">VIVO</button>
+<button class="brand-btn" onclick="filterBrand('REALME',this)">REALME</button>
+<button class="brand-btn" onclick="filterBrand('HONOR',this)">HONOR</button>
+<button class="brand-btn" onclick="filterBrand('TECNO',this)">TECNO</button>
+<button class="brand-btn" onclick="filterBrand('INFINIX',this)">INFINIX</button>
+<button class="brand-btn" onclick="filterBrand('WALTON',this)">WALTON</button>
+<button class="brand-btn" onclick="filterBrand('VILLAON',this)">VILLAON</button>
+</div>
+
+<div class="grid" id="product-grid"></div>
+</div>
+
+<div id="variantModal" class="modal">
+<div class="modal-content">
+<span class="close-modal" onclick="closeVariantModal()">&times;</span>
+<h3 style="margin-bottom:5px" id="modalTitle">Samsung Galaxy</h3>
+<p id="modalSubtitle" style="font-size:.85rem;color:var(--text-muted);margin-bottom:15px">Official</p>
+<p style="font-size:.9rem;font-weight:bold;margin-bottom:10px">ভ্যারিয়েন্ট নির্বাচন করুন:</p>
+<div id="variantList"></div>
+<a id="modalWaBtn" href="#" target="_blank" class="btn btn-wa" style="margin-top:20px">WhatsApp-এ অর্ডার করুন</a>
+</div></div>
+
+<footer>
+<p><strong>Smartphone Gallery & Brand Shop | <span style="color:var(--gp-blue)">Grameenphone Center</span></strong></p>
+<p>ঠিকানা: বটতলা, লাকসাম সিএনজি স্ট্যান্ড এর সামনে, নাঙ্গলকোট, কুমিল্লা</p>
+<p>যোগাযোগ (WhatsApp): +8801781712020</p>
+<div style="max-width:300px;margin:15px auto 0"><a href="https://www.facebook.com/share/1Dsi6nc9bb/" target="_blank" class="btn btn-fb">আমাদের Facebook পেজ ভিসিট করুন</a></div>
+</footer>
+
+<script>
+const whatsappNumber="8801781712020";
+let selectedBrand="all";
+
+const products=[
+{brand:"VILLAON",title:"Villaon V50s",specs:"Official | Budget Friendly",price:"৳ ১০,২৯০",numericPrice:10290,image:"V50s-1.jpg"},
+{brand:"WALTON",title:"Walton ZENX Z3",specs:"Official | Smooth Performance",price:"৳ ১৪,৭৯৯",numericPrice:14799,image:"Z3-BLK.webp"},
+{brand:"REALME",title:"Realme C100i",specs:"Official | EMI Available",price:"৳ ১৫,৯৯৯",numericPrice:15999,image:"C100i-1.webp"},
+{brand:"VIVO",title:"Vivo Y05e",specs:"Official | Long Life Battery",price:"৳ ১৬,৫৯৯",numericPrice:16599,image:"vivo-y05e-black.jpeg"},
+{brand:"SAMSUNG",title:"Galaxy A07",specs:"Official | 6-9 মাস কিস্তি সুবিধা",price:"৳ ১৬,৯৯৯ - ৳ ২৪,৪৯৯",numericPrice:16999,hasVariants:true,variants:[
+{ram:"4GB",rom:"64GB",price:"৳ ১৬,৯৯৯",oldPrice:"৳ ১৭,১৯৯"},
+{ram:"4GB",rom:"128GB",price:"৳ ২০,৮৯৯",oldPrice:""},
+{ram:"6GB",rom:"128GB",price:"৳ ২৪,৪৯৯",oldPrice:""}],image:"sam-a07-wht.webp"},
+{brand:"TECNO",title:"Tecno Spark 50",specs:"Official | Mega Battery",price:"৳ ১৭,৪৯৯",numericPrice:17499,image:"tecno-spark-50-black.jpeg"},
+{brand:"WALTON",title:"Walton Nexg N77",specs:"Official | Made in Bangladesh",price:"৳ ১৭,৯৯৯",numericPrice:17999,image:"walton-n77.jpg"},
+{brand:"HONOR",title:"Honor X6d",specs:"Official | Ultra Durable",price:"৳ ১৯,৯৯৯",numericPrice:19999,image:"honor-x6d.jpg"},
+{brand:"REALME",title:"Realme C100x",specs:"Official | Fast Charging",price:"৳ ২১,৯৯৯",numericPrice:21999,image:"realme-c100x.jpg"},
+{brand:"WALTON",title:"Walton NEXG N28 PRO",specs:"Official | Gaming Display",price:"৳ ২২,৪৯৯",numericPrice:22499,image:"walton-n28pro.jpg"},
+{brand:"XIAOMI",title:"Redmi 17 4G",specs:"Official | Official Warranty",price:"৳ ২২,৯৯৯",numericPrice:22999,image:"redmi-17.jpg"},
+{brand:"SAMSUNG",title:"Galaxy A17",specs:"Official | Premium Design",price:"৳ ২৪,৯৯৯",numericPrice:24999,image:"galaxy-a17.jpg"},
+{brand:"SAMSUNG",title:"Galaxy A17 5G",specs:"Official | 6-9 মাসের EMI সুবিধা",price:"৳ ৩১,৯৯৯ - ৳ ৪০,১৯৯",numericPrice:31999,hasVariants:true,variants:[
+{ram:"6GB",rom:"128GB",price:"৳ ৩১,৯৯৯",oldPrice:""},
+{ram:"8GB",rom:"128GB",price:"৳ ৩৫,৫৯৯",oldPrice:""},
+{ram:"8GB",rom:"256GB",price:"৳ ৪০,১৯৯",oldPrice:""}],image:"galaxy-a17-5g.jpg"},
+{brand:"INFINIX",title:"Infinix Hot 70 Pro",specs:"Official | 0% EMI Available",price:"৳ ৩৬,৯৯৯",numericPrice:36999,image:"infinix-hot70pro.jpg"},
+{brand:"VIVO",title:"Vivo Y500",specs:"Official | 0% EMI Available",price:"৳ ৩৬,৯৯৯",numericPrice:36999,image:"vivo-y500.jpg"},
+{brand:"OPPO",title:"Oppo A6s Pro",specs:"Official | Portrait Camera",price:"৳ ৩৯,৯৯০",numericPrice:39990,image:"oppo-a6spro.jpg"},
+{brand:"SAMSUNG",title:"Galaxy A27 5G",specs:"Official | Multiple Variants",price:"৳ ৪৮,০৯৯ - ৳ ৫২,২৯৯",numericPrice:48099,hasVariants:true,variants:[
+{ram:"6GB",rom:"128GB",price:"৳ ৪৮,০৯৯",oldPrice:""},
+{ram:"8GB",rom:"128GB",price:"৳ ৫২,২৯৯",oldPrice:""}],image:"galaxy-a27-5g.jpg"},
+{brand:"SAMSUNG",title:"Galaxy A37 5G",specs:"Official | Special Discount Offer",price:"৳ ৫৩,৯৯৯ - ৳ ৫৭,৯৯৯",numericPrice:53999,hasVariants:true,discount:"বিশেষ ছাড়",variants:[
+{ram:"8GB",rom:"128GB",price:"৳ ৫৩,৯৯৯",oldPrice:"৳ ৬০,৪৯৯"},
+{ram:"8GB",rom:"256GB",price:"৳ ৫৭,৯৯৯",oldPrice:"৳ ৬৮,৯৯৯"}],image:"galaxy-a37-5g.jpg"},
+{brand:"SAMSUNG",title:"Galaxy A57 5G",specs:"Official | Special Discount Offer",price:"৳ ৭১,৯৯৯",numericPrice:71999,oldPrice:"৳ ৭৯,৯৯৯",discount:"৳ ৮,০০০ ছাড়",image:"galaxy-a57.jpg"},
+{brand:"XIAOMI",title:"Xiaomi 17T 5G",specs:"Official | Special Discount Offer",price:"৳ ৭৪,৯৯৯",numericPrice:74999,oldPrice:"৳ ৭৯,৯৯৯",discount:"৳ ৫,০০০ ছাড়",image:"xiaomi-17t.jpg"}
+];
+
+function renderProducts(items){
+const grid=document.getElementById("product-grid");grid.innerHTML="";
+const sorted=[...items].sort((a,b)=>a.numericPrice-b.numericPrice);
+document.getElementById("search-result").textContent=
+document.getElementById("product-search").value.trim()?`${sorted.length}টি প্রোডাক্ট পাওয়া গেছে`:"";
+if(!sorted.length){grid.innerHTML='<div class="empty-state">😔 কোনো প্রোডাক্ট পাওয়া যায়নি। অন্য নামে সার্চ করুন।</div>';return}
+sorted.forEach(p=>{
+let priceContent=p.oldPrice?`<span class="old-price">${p.oldPrice}</span><span class="price">${p.price}</span>`:`<span class="price">${p.price}</span>`;
+let badge=p.discount?`<div class="discount-badge">${p.discount}</div>`:"";
+if(!badge&&p.hasVariants&&p.variants.some(v=>v.oldPrice))badge='<div class="discount-badge">বিশেষ ছাড়</div>';
+let action=p.hasVariants?`<button onclick="openVariantModal('${p.title.replace(/'/g,"\\'")}')" class="btn btn-wa">ভ্যারিয়েন্ট নির্বাচন করুন</button>`:
+`<a href="https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`হ্যালো, আমি Smartphone Gallery থেকে "${p.title}" (দাম: ${p.price}) ফোনটি সম্পর্কে জানতে/অর্ডার করতে চাই।`)}" target="_blank" class="btn btn-wa">WhatsApp-এ অর্ডার করুন</a>`;
+const fallback=`https://via.placeholder.com/300x300/1c2541/ff6b35?text=${encodeURIComponent(p.title)}`;
+grid.innerHTML+=`<div class="card">${badge}<img src="${p.image}" alt="${p.title}" loading="lazy" onerror="this.src='${fallback}'"><div class="card-body"><h3 class="card-title">${p.title}</h3><p class="card-specs">${p.specs}</p><div class="price-box">${priceContent}</div>${action}</div></div>`;
+});
+}
+
+function applyFilters(){
+const term=document.getElementById("product-search").value.toLowerCase().trim();
+let filtered=products;
+if(selectedBrand!=="all")filtered=filtered.filter(p=>p.brand===selectedBrand);
+if(term)filtered=filtered.filter(p=>{
+const text=[p.title,p.brand,p.specs,...(p.variants||[]).map(v=>`${v.ram} ${v.rom} ${v.price}`)].join(" ").toLowerCase();
+return text.includes(term);
+});
+renderProducts(filtered);
+}
+function searchProducts(){applyFilters()}
+function filterBrand(brand,button){
+selectedBrand=brand;
+document.querySelectorAll(".brand-btn").forEach(b=>b.classList.remove("active"));
+button.classList.add("active");
+applyFilters();
+}
+function openVariantModal(title){
+const p=products.find(x=>x.title===title);if(!p)return;
+document.getElementById("modalTitle").textContent=p.title;
+document.getElementById("modalSubtitle").textContent=p.specs;
+const list=document.getElementById("variantList");list.innerHTML="";
+p.variants.forEach((v,i)=>{
+const item=document.createElement("div");item.className="variant-option"+(i===0?" selected":"");
+item.innerHTML=`<div><strong>${v.ram} / ${v.rom}</strong></div><div>${v.oldPrice?`<span class="variant-old-price">${v.oldPrice}</span>`:""}<span class="variant-price">${v.price}</span></div>`;
+item.onclick=()=>selectVariant(item,p,v);list.appendChild(item);
+});
+selectVariant(list.children[0],p,p.variants[0]);
+document.getElementById("variantModal").style.display="block";
+}
+function selectVariant(element,p,v){
+document.querySelectorAll(".variant-option").forEach(x=>x.classList.remove("selected"));
+element.classList.add("selected");
+document.getElementById("modalWaBtn").href=`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`হ্যালো, আমি Smartphone Gallery থেকে "${p.title}" (${v.ram}/${v.rom} - দাম: ${v.price}) ফোনটি অর্ডার করতে চাই।`)}`;
+}
+function closeVariantModal(){document.getElementById("variantModal").style.display="none"}
+window.onclick=e=>{if(e.target===document.getElementById("variantModal"))closeVariantModal()};
+
+const sliderWrapper=document.getElementById("banner-slider"),slides=document.querySelectorAll(".slide"),dots=document.querySelectorAll(".dot"),count=slides.length;
+sliderWrapper.appendChild(slides[0].cloneNode(true));
+let currentIndex=0,slideInterval;
+function updateDots(i){dots.forEach((d,n)=>d.classList.toggle("active",n===i%count))}
+function moveToSlide(i,animate=true){sliderWrapper.style.transition=animate?"transform .6s ease-in-out":"none";sliderWrapper.style.transform=`translateX(-${i*100}%)`;currentIndex=i;updateDots(i)}
+function nextSlide(){currentIndex++;moveToSlide(currentIndex,true);if(currentIndex===count)setTimeout(()=>moveToSlide(0,false),900)}
+function goToSlide(i){moveToSlide(i,true);resetTimer()}
+function startTimer(){slideInterval=setInterval(nextSlide,6000)}
+function resetTimer(){clearInterval(slideInterval);startTimer()}
+document.querySelector(".slider-container").addEventListener("mouseenter",()=>clearInterval(slideInterval));
+document.querySelector(".slider-container").addEventListener("mouseleave",startTimer);
+
+renderProducts(products);startTimer();
+</script>
+</body>
+</html>
