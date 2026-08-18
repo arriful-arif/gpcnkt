@@ -1,6 +1,14 @@
 {
   "products": [
     {
+      "title": "Oppo A6c",
+      "brand": "OPPO",
+      "image": "/images/products/1000052679.jpg",
+      "specs": "6Month Emi Available",
+      "price": "১৯,৯৯৯",
+      "variants": []
+    },
+    {
       "title": "Realme C100x 2",
       "brand": "REALME",
       "image": "/images/products/realme-c100x-golden-coast-official-image.webp",
